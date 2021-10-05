@@ -18,4 +18,3 @@ while(cnt > 0):
     turtle.right(90)
     turtle.pendown()
     cnt = cnt-1
-turtle.exitonclick()
