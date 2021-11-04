@@ -92,12 +92,13 @@ class RunState:
 next_state_table = {
     IdleState: {RIGHT_UP: RunState, LEFT_UP: RunState, SHIFT_UP: IdleState,
                 RIGHT_DOWN: RunState, LEFT_DOWN: RunState, SHIFT_DOWN: IdleState,
+                (LEFT_DOWN, RIGHT_UP): RunState, (RIGHT_DOWN, LEFT_UP): RunState,
                 },
     RunState: {RIGHT_UP: IdleState, LEFT_UP: IdleState, SHIFT_UP: RunState,
                LEFT_DOWN: IdleState, RIGHT_DOWN: IdleState, SHIFT_DOWN: DashState,
                },
-    DashState: {LEFT_DOWN: RunState, RIGHT_DOWN: RunState, SHIFT_DOWN: DashState,
-                 LEFT_UP: RunState, RIGHT_UP: RunState, SHIFT_UP: RunState,
+    DashState: {LEFT_DOWN: IdleState, RIGHT_DOWN: IdleState, SHIFT_DOWN: DashState,
+                 LEFT_UP: IdleState, RIGHT_UP: IdleState, SHIFT_UP: RunState,
                 DASH_TIMER: RunState}
 }
 
