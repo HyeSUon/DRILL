@@ -21,9 +21,9 @@ class Ball:
          self.image.draw(self.x, self.y)
 
     def update(self):
-        if(self.y**2 < 100**2):
+        if(self.y**2 < 71**2):
             if(self.Big):
-                self.y = 75
+                self.y = 70
             else:
                 self.y = 60
         else:
